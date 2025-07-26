@@ -1,0 +1,10 @@
+﻿@model List<Course>
+
+
+@foreach (var course in Model)
+{
+    if (course.isActive && course.isHome)
+    {
+        @await Html.PartialAsync("_CourseCards", course)
+    }
+}

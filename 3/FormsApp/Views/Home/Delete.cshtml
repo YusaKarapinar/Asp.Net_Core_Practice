@@ -1,0 +1,18 @@
+@model Product
+@{
+ViewData["Title"] = "Delete Page";
+}
+
+@Model.ProductId
+@Model.Name
+@Model.Price
+
+@Model.Image
+
+
+<p>gerçekten bu ürünü silmek istiyor musunuz</p>
+
+<form asp-controller="Home" asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.ProductId" />
+    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+</form>

@@ -1,0 +1,9 @@
+@model Course
+<a asp-controller="Course" asp-action="Details" asp-route-id=@Model.Id>@Model.Title</a>
+<div class="container"> 
+    <img   src="~/img/@Model.Image" width="100" class="img-fluid" alt="@Model.Title" />
+    @foreach (var tag in Model.Tags)
+    {
+        <span class="badge bg-secondary">@tag</span>
+    }
+</div>

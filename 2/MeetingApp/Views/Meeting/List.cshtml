@@ -1,0 +1,45 @@
+@model List<UserInfo>
+    <main class="text-center">
+        <h1>toplantı katılımn listesi</h1>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <td class="">ad</td>
+                    <td>Katılım durumu</td>
+                    <td>Detay</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{int i =0;}
+
+
+
+                @foreach (var user in Model)
+                {
+                var className = user.WillAttend ? "table-success" : "table-danger";
+                if (user.WillAttend)
+                {
+                i++;
+                }
+
+                <tr class="@className">
+
+                    <td>@user.Name</td>
+                    <td>@(user.WillAttend ? "katıldı" : "katılmadı")</td>
+                    <td>
+                        <a class="btn btn-sm bg-primary text-white" asp-controller="Meeting" asp-action="Details"
+                            asp-route-id="@user.Id">Detay</a>
+                    </td>
+
+
+                </tr>
+                }
+                <tr>
+                    <td colspan="2">Toplam katılımcı sayısı</td>
+                    <td>@i</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </main>

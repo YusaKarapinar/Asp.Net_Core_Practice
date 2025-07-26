@@ -1,0 +1,16 @@
+@model MeetingInfo    
+<main class="text-center">
+<h1>Toplantı</h1>
+<p>toplantı durumunuzu bildiriniz </p>
+
+<div class="card my-2">
+    <ul class="listg-group listg-group-flush">
+        <li class="list-group-item">@Model.Location</li>
+        <li class="list-group-item">@Model.Date.ToString("dd/MM/yyyy HH:mm:ss")</li>
+        <li class="list-group-item">@Model.NumberOfPeople</li>
+
+    </ul>
+</div>
+
+
+<a class ="btn btn-sm bg-primary text-white" asp-controller="Meeting" asp-action="Apply">başvuru yap</a></main>

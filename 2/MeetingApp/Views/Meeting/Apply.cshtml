@@ -1,0 +1,31 @@
+@model UserInfo
+<h1>toplantı katılım formu</h1>
+<main class="text-center">
+    
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label "> Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label "> Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label "> Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="WillAttend" class="form-label "> Will you Attend</label>
+        <select asp-for="WillAttend" class="form-select">
+            <option value="True">Evet</option>
+            <option value="False">Hayır</option>
+
+
+        </select>
+    </div>
+    <button type="submit">Kaydet</button>
+</form>
+
+</main> 

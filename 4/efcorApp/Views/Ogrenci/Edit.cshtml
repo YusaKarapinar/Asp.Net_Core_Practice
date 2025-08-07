@@ -1,0 +1,52 @@
+@model Ogrenci
+@{
+ViewData["Title"] = "Edit Page";
+}
+
+<div class="row">
+  <div class="col-8">
+
+    <form asp-controller="Ogrenci" asp-action="Edit" method="post">
+
+
+
+      <input type="hidden" asp-for="OgrenciId" />
+
+
+      <div class="mb-3">
+        <label asp-for="OgrenciAd" class="form-label"> </label>
+        <input asp-for="OgrenciAd" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="OgrenciSoyad" class="form-label"></label>
+        <input asp-for="OgrenciSoyad" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label asp-for="OgrenciEmail" class="form-label"></label>
+        <input asp-for="OgrenciEmail" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label asp-for="OgrenciTelefon" class="form-label"></label>
+        <input asp-for="OgrenciTelefon" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Kaydet</button>
+
+
+    </form>
+  </div>
+  <div class="col-4">
+    Kurslar
+    <ul>
+      @foreach(var item in @Model.KursKayitlar){
+
+
+      <li>@item.Kurs.Baslik</li>
+
+      
+
+      }
+    </ul>
+  </div>
+</div>

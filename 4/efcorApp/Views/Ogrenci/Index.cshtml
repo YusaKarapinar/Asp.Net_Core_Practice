@@ -1,0 +1,44 @@
+@model IEnumerable<Ogrenci>
+    @{
+    ViewData["Title"] = "Home Page";
+    }
+
+    <a  asp-controller="Ogrenci" asp-action="Create" class="btn btn-sm btn-primary">Create</a>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m=>m.OgrenciId)</th>
+                <th>@Html.DisplayNameFor(m=>m.OgrenciAd)</th>
+                <th>@Html.DisplayNameFor(m=>m.OgrenciSoyad)</th>
+                <th>@Html.DisplayNameFor(m=>m.OgrenciEmail)</th>
+                <th>@Html.DisplayNameFor(m=>m.OgrenciTelefon)</th>
+                <th></th>
+
+            </tr>
+
+
+        </thead>
+        <tbody>
+            
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>@Html.DisplayFor(ModelItem=>item.OgrenciId)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.OgrenciAd)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.OgrenciSoyad)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.OgrenciEmail)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.OgrenciTelefon)</td>
+                <td><a asp-controller="Ogrenci" asp-action="Edit" asp-route-id="@item.OgrenciId" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@item.OgrenciId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+            }
+            
+
+
+
+        </tbody>
+
+        </div>

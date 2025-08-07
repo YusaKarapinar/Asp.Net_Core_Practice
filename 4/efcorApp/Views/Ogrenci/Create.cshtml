@@ -1,0 +1,32 @@
+@model Ogrenci
+  @{
+    ViewData["Title"] = "Create Öğrenci";
+    }
+<form asp-controller="Ogrenci" asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+
+
+    <div class="mb-3">
+        <label asp-for="OgrenciAd" class="form-label"></label>
+        <input asp-for="OgrenciAd" class="form-control">
+    </div>
+
+        <div class="mb-3">
+        <label asp-for="OgrenciSoyad" class="form-label"></label>
+        <input asp-for="OgrenciSoyad" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="OgrenciEmail" class="form-label"></label>
+        <input asp-for="OgrenciEmail" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="OgrenciTelefon" class="form-label"></label>
+        <input asp-for="OgrenciTelefon" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+
+
+</form>

@@ -1,0 +1,21 @@
+bin/
+obj/
+database.db
+appsettings.json
+# Build klasörleri
+bin/
+obj/
+
+# Veritabanı dosyaları
+*.db
+
+# Ayar dosyaları (gizli bilgiler olabilir)
+appsettings.json
+appsettings.Development.json
+
+# Kullanıcıya özel ayarlar
+*.user
+*.suo
+
+# IDE klasörleri
+.vs/

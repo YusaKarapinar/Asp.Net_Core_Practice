@@ -1,0 +1,67 @@
+﻿@model ProductViewModel
+@{
+ViewData["Title"] = "Home Page";
+}
+
+
+<div class="car card-body my-3">
+    <form asp-action="" class="get">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <select class="form-select" name="category" asp-items="@(new SelectList(Model.Categories, "CategoryId", "Name" , Model.selectedCategory))">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+
+            <th style="width: 100px;">ProductId</th>
+            <th style="width: 100px;">Price</th>
+            <th>Name</th>
+            <th style="width: 100px;">Image</th>
+            <th style="width: 130px;"></th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var product in @Model.Products){
+        <tr>
+
+            <td>@product.ProductId</td>
+            <td>@product.Price</td>
+            <td>@product.Name</td>
+            <td> <img src="~/img/@product.Image" class="img-fluid" alt=""> </td>
+            <td>
+
+
+                <form asp-controller="Home" asp-action="Edit" method="get">
+                    <input type="hidden" name="id" value="@product.ProductId" />
+                    <button type="submit" class="btn btn-sm btn-primary">Edit</button>
+                </form>
+                <form asp-controller="Home" asp-action="Delete" method="get">
+                    <input type="hidden" name="id" value="@product.ProductId" />
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+
+            </td>
+
+
+
+        </tr> }
+    </tbody>
+
+
+</table>

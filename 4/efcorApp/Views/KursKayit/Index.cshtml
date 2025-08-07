@@ -1,0 +1,39 @@
+@model IEnumerable<KursKayit>
+    @{
+    ViewData["Title"] = "Home Page";
+    }
+    <a asp-controller="KursKayit" asp-action="Create" class="btn btn-sm btn-primary">Create</a>
+
+    <table class="table">
+        
+        
+
+        <thead>
+             <tr>
+                <th>@Html.DisplayNameFor(m=>m.KayitId)</th>
+                <th>@Html.DisplayNameFor(m=>m.Ogrenci.OgrenciAd)</th>
+                <th>@Html.DisplayNameFor(m=>m.Kurs.Baslik)</th>
+                <th>@Html.DisplayNameFor(m=>m.KayitTarihi)</th>
+                
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>@Html.DisplayFor(ModelItem=>item.KayitId)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.Ogrenci.OgrenciAd)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.Kurs.Baslik)</td>
+                <td>@Html.DisplayFor(ModelItem=>item.KayitTarihi)</td>
+              
+                <td><a asp-controller="KursKayit" asp-action="Edit" asp-route-id="@item.KayitId" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-controller="KursKayit" asp-action="Delete" asp-route-id="@item.KayitId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+                }
+            
+        </tbody>
+    </div>

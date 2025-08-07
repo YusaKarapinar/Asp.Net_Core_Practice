@@ -1,0 +1,14 @@
+@model KursKayit
+
+@{
+ViewData["Title"] = "Delete Page";
+}
+
+<p>
+    <b>@Model.KayitId </b> isimli kaydı silmek istediğinize emin misiniz?
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="KayitId" />
+    <button type="submit" class="btn btn-danger">Evet, Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">Hayır, İptal Et</a>
+</form>
+</p>

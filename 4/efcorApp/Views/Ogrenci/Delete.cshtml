@@ -1,0 +1,20 @@
+@model Ogrenci
+
+    @{
+    ViewData["Title"] = "Home Page";
+    }
+
+    <p>
+        <b>@Model.OgrenciAd </b> isimli öğrenciyi silmek istediğinize emin misiniz?
+        <form asp-action="Delete" method="post">
+
+            <input type="hidden" name ="id" value="@Model.OgrenciId" />
+            <button type="submit" class="btn btn-danger">Evet, Sil</button>
+            <a asp-action="Index" class="btn btn-secondary">Hayır, İptal Et</a>
+
+
+
+
+
+        </form>
+    </p>

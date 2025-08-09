@@ -1,0 +1,17 @@
+bin/
+obj/
+database.db
+appsettings.json
+
+bin/
+obj/
+
+*.db
+
+appsettings.json
+appsettings.Development.json
+
+*.user
+*.suo
+
+.vs/

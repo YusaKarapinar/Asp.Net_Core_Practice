@@ -8,7 +8,8 @@ public class Post
     [Key]
     public int PostId { get; set; }
     public string? PostName { get; set; }
-    public string? PostContent { get; set; }
+    public string? PostText { get; set; }
+    public string? PostImage { get; set; }
     public DateTime PostPublishDate { get; set; }
     public bool PostIsActive { get; set; }
 

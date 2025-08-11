@@ -17,16 +17,22 @@ builder.Services.AddDbContext<BlogContext>(options =>
 
 
 builder.Services.AddScoped<IPostRepository, EfPostRepository>();
+builder.Services.AddScoped<ITagRepository, EfTagRepository>();
 
 
 
 
 var app = builder.Build();
-
+app.UseRouting();
 app.UseStaticFiles();
 
 SeedData.TestVerileriniDoldur(app);
 
 
-app.MapDefaultControllerRoute();
+app.UseEndpoints(endpoints =>
+{
+    _ = endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Posts}/{action=Index}/{id?}");
+});
 app.Run();

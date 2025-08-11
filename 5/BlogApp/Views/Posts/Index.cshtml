@@ -1,7 +1,42 @@
- Post Listesi
-      
-            @foreach(var post in Model){
-                <li>@post.PostName</li>
+@model PostViewModel
+<div class="row">
+    <div class="col-lg-8">
+        <div class="bg-white p-4 rounded">
+            <h1 class="h4 mb-4">
+                Popular Posts
+                @foreach(var post in @Model.Posts){
+                <div class="card">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="~/img/@post.PostImage" class="img-fluid rounded">
+                        </div>
+                        <div class="col-8">
+                            <h5 class="card-title">@post.PostName</h5>
+                            @foreach(var tag in post.PostTags)
+                            {
+                            <a href="#"
+                                class="badge bg-danger bg-opacity-10 text-opacity-50 text-primary">@tag.TagName</a>
 
-            }
-    
+                            }
+                            <p class="card-text">@post.PostText</p>
+
+                            <button asp-controller="Posts" asp-action="Details" asp-route-id="@post.PostId"
+                                class="btn btn-primary position-absolute bottom-0 end-0 m-3">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                }
+                <div class="my-3"></div>
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        </li>
+                    </ul>
+                </nav>
+            </h1>
+        </div>
+    </div>
+  <vc:tags-menu></vc:tags-menu>

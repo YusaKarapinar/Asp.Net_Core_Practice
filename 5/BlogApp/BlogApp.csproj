@@ -8,11 +8,13 @@
 
   <ItemGroup>
     <Folder Include="Data\Abstract\" />
+    <Folder Include="Views\Shared\Components\" />
     <Folder Include="View\" />
     <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
   <ItemGroup>
